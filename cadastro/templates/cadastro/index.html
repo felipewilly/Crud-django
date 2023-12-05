@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto-Lab</title>
+    <link rel="stylesheet" href="{% static 'style/index.css'%}">
+</head>
+
+<body>
+    <nav class="colorPB">
+        <a href="/" ><h1>Cadastro</h1></a>
+        <a href="{% url 'cadastrado' %}" ><h1>CASTRADO</h1></a>
+    </nav>
+    <div class="div-primary-cad ">
+        <h2>Cadastro de User</h2>
+    </div>
+    <div class="div-agup">
+            <form action="{% url 'cadastrar' %}" method="post" class="cadastro-input">
+                {% csrf_token %}
+            <div class="div-form ">
+                <p>Nome:</p><input type="text" name="Nome" id="Nome" value="">
+            </div>
+            <div class="div-form">
+                <p>Idade:</p><input type="text" name="Idade" id="Idade">
+            </div>
+            <div class="div-form ">
+            <br>
+                <button type="submit">Enviar</button>
+            </div>
+            </form>
+
+    </div>
+</body>
+
+</html>

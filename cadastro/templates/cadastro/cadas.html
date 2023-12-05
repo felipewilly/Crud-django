@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto-Lab</title>
+    <link rel="stylesheet" href="{% static 'style/index.css'%}">
+</head>
+
+<body>
+    <nav class="colorPB">
+        <a href="/" ><h1>Cadastro</h1></a>
+        <a href="{% url 'cadastrado' %}" ><h1>CASTRADO</h1></a>
+    </nav>
+    <div class="div-primary-cad">
+        <h2>Lista de Cadastro</h2>
+    </div>
+    <div class="div-secun-cad">
+    
+        <table>
+            <tr>
+                <td>Nome</td>
+                <td>Idade</td>
+                </tr>
+            {% for uses in user %}
+            <tr>
+            <td>{{uses.nome}}</td>
+            <td>{{uses.idade}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+
+
+
+</body>
+
+</html>
